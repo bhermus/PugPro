@@ -1,0 +1,39 @@
+html, body, input, a, button, label, select {
+	cursor: url(http://files.simey.me/wow-cursor.png), auto;
+}
+
+html{
+	background-color: rgb(51,102,204);
+}
+
+body {
+	width:max-content;
+	max-width: 1000px; 
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-bottom: 8px;
+	padding-top: 4px; 
+	margin: auto; 
+	margin-top: 1%; 
+	background-color: white;
+	box-shadow: rgb(36, 71, 143) 5px 5px 25px,  rgb(36, 71, 143) -5px -5px 25px;
+	border-radius: 10px;
+}
+
+.error {
+	color:red;
+}
+
+@media all and (max-device-width: 768px) {
+	body {
+		max-width:90%;
+		min-width:340px;
+		text-align:center;
+		box-shadow: none;
+	}
+	.centered {
+		display:inline-block;
+		text-align:left;
+		
+	}
+}

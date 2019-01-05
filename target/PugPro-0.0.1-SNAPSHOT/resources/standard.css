@@ -1,0 +1,65 @@
+html, body, input, a, button, label, select {
+	cursor: url(http://files.simey.me/wow-cursor.png), auto;
+}
+
+html{
+	margin: 0 auto;
+	background-size: cover;
+	background-size: -moz-cover;
+	background-size: -webkit-cover;
+	background-size: -o-cover;
+	background-attachment: fixed;
+	background-position:center;
+	background-color: transparent;
+	background-image:url("wow-bfa.jpg");
+
+}
+
+body {
+	
+}
+
+.error {
+	color:red;
+}
+
+.logo {
+	display:block;
+	margin:auto;
+	max-width:90%;
+}
+.content {
+	width:max-content;
+	width:-moz-fit-content;
+	width: -webkit-fit-content;
+	width: -o-max-content;
+	max-width: 1000px; 
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-bottom: 8px;
+	padding-top: 4px; 
+	margin: auto; 
+	margin-top: 1%; 
+	background-color: white;
+	box-shadow: rgb(0, 0, 0) 5px 5px 25px,  rgb(0, 0, 0) -5px -5px 25px;
+	border-radius: 10px;
+	word-wrap:break-word;
+}
+
+@media all and (max-device-width: 768px) {
+	body {
+		max-width:90%;
+		min-width:340px;
+		text-align:center;
+		box-shadow: none;
+	}
+	
+	.content {
+		max-width:90%;
+	}
+	.centered {
+		display:inline-block;
+		text-align:left;
+		
+	}
+}
