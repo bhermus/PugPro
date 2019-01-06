@@ -201,9 +201,14 @@ public class HomeController {
 	@RequestMapping(value="/eventPage/{id}", method=RequestMethod.GET) 
 	public ModelAndView displayEventPage(HttpSession session, @PathVariable("id") String id) {
 		ModelAndView mav = new ModelAndView("event");
-		EventDAO dao = new EventDAO();
-		mav.addObject("event", dao.getEventByID(id));
+		EventDAO eventDao = new EventDAO();
+		UserDAO userDao = new UserDAO();
+		List<String> attendeeIDs = eventDao.getEventAttendees(id);
+		List<String> attendees = new ArrayList<String>();
+		attendeeIDs.forEach(s -> attendees.add(userDao.getUserByID(s).getUsername()));
 		
+		mav.addObject("event", eventDao.getEventByID(id));
+		mav.addObject("attendees", attendees);
 		mav.addObject("message", session.getAttribute("message")); //add error message to model if it exists
 		session.removeAttribute("message"); //remove message from session
 		

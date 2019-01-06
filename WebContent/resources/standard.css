@@ -46,6 +46,10 @@ body {
 	word-wrap:break-word;
 }
 
+.indent {
+	margin-left: 40px;
+}
+
 @media all and (max-device-width: 768px) {
 	body {
 		max-width:90%;

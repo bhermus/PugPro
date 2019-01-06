@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -22,10 +23,14 @@
 <form action="${ event.eventID }" method="POST">
 	<input type="submit" name="submit" id="submit" value="Sign Up" />
 	<p style="color:red"> ${ message }</p>
-	
 </form>
 
 <a href="../">Home</a>
+
+<p>Users attending this event:</p>
+<c:forEach items="${ attendees }" var="attendee" varStatus="loop">
+	<p class=indent>${ loop.index+1}. ${ attendee }</p>
+</c:forEach>
 </div>
 </body>
 </html>

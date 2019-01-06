@@ -124,4 +124,36 @@ public class EventDAO {
 		
 		return event; 
 	}
+	
+	/**
+	 * Returns a List of the User IDs of the Users attending the given Event.
+	 * @param id The ID of the Event.
+	 * @return A List of User IDs.
+	 */
+	public List<String> getEventAttendees(String id){
+		OracleConnection oc = new OracleConnection();
+		Connection conn = null;
+		PreparedStatement p = null;
+		ResultSet result = null;
+		List<String> users = new ArrayList<String>();
+		
+		try {
+			conn = oc.getConnection();
+			
+			p = conn.prepareStatement("SELECT userid FROM attending WHERE eventid = ?");
+			p.setString(1, id);
+			result = p.executeQuery();
+			
+			while(result.next()) {
+				users.add(result.getString(1));
+			}
+			
+			conn.close();
+		} catch (ClassNotFoundException | IOException | SQLException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return users;
+	}
 }
