@@ -30,14 +30,14 @@
 		</tr>
 		<tr>
 			<td><label for="password">Password:</label></td>
-			<td><form:input type="text" name="password" id="password" path="password" /></td>
+			<td><form:input type="password" name="password" id="password" path="password" /></td>
 		</tr>
 		<tr>
 			<td colspan="2"><form:errors path="password" cssClass="error" /></td>
 		</tr>
 		<tr>
 			<td><label for="confirmPassword">Confirm password:</label>
-			<td><input type="text" name="confirmPassword" id="confirmPassword" /></td>
+			<td><input type="password" name="confirmPassword" id="confirmPassword" /></td>
 		</tr>
 		<tr>
 			<td colspan="2"><form:errors path="" cssClass="error" /></td>

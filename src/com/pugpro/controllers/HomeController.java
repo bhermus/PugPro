@@ -100,7 +100,7 @@ public class HomeController {
 			result.addError(new ObjectError("confirmPassword","Passwords do not match.")); //add ObjectError
 		} else if (result.hasErrors() ) { //if there were binding errors,	
 			mav.setViewName("register"); //stay on the page
-		} else if (dao.createUser(user.getUsername(), user.getEmail(), user.getPassword())) { //attempt to create user, and if the user was created successfully,
+		} else if (!(dao.createUser(user.getUsername(), user.getEmail(), user.getPassword()) == null)) { //attempt to create user, and if the user was created successfully,
 			user = dao.getUserByEmail(user.getEmail()); //get User object from email
 			session.setAttribute("user", user); //create user session attribute
 			response.sendRedirect("home"); //redirect to the homepage

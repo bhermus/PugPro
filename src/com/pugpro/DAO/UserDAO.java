@@ -22,7 +22,7 @@ public class UserDAO {
 	 * @param password The password of the User.
 	 * @return Whether or not the User was successfully created.
 	 */
-	public boolean createUser(String username, String email, String password) {
+	public String createUser(String username, String email, String password) {
 		OracleConnection oc = new OracleConnection();
 		Connection conn = null;
 		PreparedStatement p = null;
@@ -43,9 +43,9 @@ public class UserDAO {
 			conn.close();
 		} catch (ClassNotFoundException | IOException | SQLException e) {
 			System.out.println(e.getMessage());
-			return false;
+			return null;
 		}
-		return true;
+		return userID.toString();
 	}
 	
 	/**
